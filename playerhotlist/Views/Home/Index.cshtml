@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<playerhotlist.Models.HotlistItem>
+
+<table class="hotlist-content-table">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>B3 ID</th>
+            <th>TS3 ID</th>
+            <th>Name</th>
+            <th>Reason</th>
+            <th>Aliases</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    @foreach (var i in Model)
+    { 
+        <tr>
+            <td>@i.game</td>
+            <td>@i.b3ID</td>
+            <td>@i.teamspeakID</td>
+            <td>@i.playerName</td>
+            <td>@i.reason</td>
+            <td>@i.aliases</td>
+            <td>@if (i.status == false)
+                {
+                    
+                }
+                else
+                {
+                    <text>Banned</text>
+                }
+            </td>
+        </tr>
+    }
+</table>

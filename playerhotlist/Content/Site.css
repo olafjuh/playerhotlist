@@ -1,0 +1,80 @@
+﻿html{
+    background-color:#121212;
+    font-family:Arial;
+}
+
+a{
+    color:#ffd800;
+}
+#login{
+    margin-right:5%;
+    margin-left:90%;
+    
+}
+
+/*Index/hotlist*/
+.nav-bar{
+    height:150px;
+    margin-top:50px;
+    color:#ffd800;
+}
+
+.nav-bar ul{
+    list-style-type:none;
+    margin-top:5%;
+}
+
+.nav-bar ul li{
+    display:inline;
+    width:20%;
+    height:5%;
+    margin-left:17%;
+    margin-bottom:5%;
+    padding:2% 2% 2% 2%;
+}
+
+.content-box{
+    min-height:600px;
+    height:auto;
+    margin-top:10px;
+}
+.general-layout{
+    border: 1px groove #808080;
+    background-color:#1b1b1b;
+    width:60%;
+    margin-left:20%;
+    margin-right:20%; 
+}
+
+/*Hotlist table content*/
+table { 
+color: #000000; /* Lighten up font color */
+font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+width: auto; 
+border-collapse: collapse;
+border-spacing: 0;
+           
+}
+
+td, th { border: 1px solid #808080; height: 20px; width:2%;} /* Make cells a bit taller */
+
+th {
+background: #808080; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+background: #FAFAFA; /* Lighter grey background */
+text-align: center; /* Center our text */
+padding: 5px 5px 5px 5px;
+}
+
+table td:first-child{
+    text-align:left;
+}
+
+/*Footer*/
+
+footer{
+    text-align:center;
+}
