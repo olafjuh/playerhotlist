@@ -1,0 +1,50 @@
+﻿@model playerhotlist.Models.HotlistItem
+
+
+<div class="form-wrapper">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(c => c.id);
+
+
+        @Html.LabelFor(m => m.game)
+        @Html.TextBoxFor(m => m.game)
+        @Html.ValidationMessageFor(m => m.game)
+        <br />
+        @Html.LabelFor(m => m.playerName)
+        @Html.TextBoxFor(m => m.playerName)
+        @Html.ValidationMessageFor(m => m.playerName)
+        <br />
+        @Html.LabelFor(m => m.aliases)
+        @Html.TextBoxFor(m => m.aliases)
+        @Html.ValidationMessageFor(m => m.aliases)
+        <br />
+        @Html.LabelFor(m => m.b3ID)
+        @Html.TextBoxFor(m => m.b3ID)
+        @Html.ValidationMessageFor(m => m.b3ID)
+        <br />
+        @Html.LabelFor(m => m.teamspeakID)
+        @Html.TextBoxFor(m => m.teamspeakID)
+        @Html.ValidationMessageFor(m => m.teamspeakID)
+        <br />
+        @Html.LabelFor(m => m.reason)
+        @Html.TextBoxFor(m => m.reason)
+        @Html.ValidationMessageFor(m => m.reason)
+        <br />
+        @Html.LabelFor(m => m.situation)
+        @Html.TextAreaFor(m => m.situation)
+        @Html.ValidationMessageFor(m => m.situation)
+        <br />
+        @Html.LabelFor(m => m.chatlog)
+        @Html.TextAreaFor(m => m.chatlog)
+        @Html.ValidationMessageFor(m => m.chatlog)
+        <br />
+        @Html.LabelFor(m => m.creator)
+        @Html.TextAreaFor(m => m.creator)
+        @Html.ValidationMessageFor(m => m.creator)
+        <br />
+        @Html.ActionLink("Edit", "EditHotlistItem", new { id3 = @Model.id });
+    }
+    </div>
+
+

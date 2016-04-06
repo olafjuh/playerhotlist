@@ -13,24 +13,26 @@
             <th>Status</th>
         </tr>
     </thead>
-    @foreach (var i in Model)
-    { 
-        <tr>
-            <td>@i.game</td>
-            <td>@i.b3ID</td>
-            <td>@i.teamspeakID</td>
-            <td>@i.playerName</td>
-            <td>@i.reason</td>
-            <td>@i.aliases</td>
-            <td>@if (i.status == false)
-                {
-                    
-                }
-                else
-                {
-                    <text>Banned</text>
-                }
-            </td>
-        </tr>
+    @foreach (var m in Model)
+    {
+        //link for editing/viewing item.
+        <tr onclick="location.href = '@(Url.Action("Examine", "HotlistItem", new { id = m.id }))'">
+                <td>@m.game</td>
+                <td>@m.b3ID</td>
+                <td>@m.teamspeakID</td>
+                <td>@m.playerName</td>
+                <td>@m.reason</td>
+                <td>@m.aliases</td>
+                <td>@if (m.status == false)
+                    {
+
+                    }
+                    else
+                    {
+                        <text>Banned</text>
+                    }
+                </td>
+            </tr>
     }
 </table>
+

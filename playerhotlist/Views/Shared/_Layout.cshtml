@@ -18,9 +18,11 @@
                     <nav>
                         <div class="nav-bar general-layout">
                             <ul>
-                                <li>@Html.ActionLink("ARMA 3", "Contact", "Home")</li>
-                                <li>@Html.ActionLink("ACV", "Contact", "Home")</li>
-                                <li>@Html.ActionLink("CSGO", "Contact", "Home")</li>
+                                <li>@Html.ActionLink("ARMA 3", "Arma", "Home")</li>
+                                <li>@Html.ActionLink("ACV", "Aircav", "Home")</li>
+                                <li>@Html.ActionLink("CSGO", "Counter", "Home")</li>
+                                <li>@Html.ActionLink("SQUAD", "Squad", "Home")</li>
+                                <li>@Html.ActionLink("New", "NewHotlistItem", "HotlistItem")</li>
                             </ul>
                         </div>
                     </nav>
@@ -31,8 +33,9 @@
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 <div class="content-box general-layout">
-                    @RenderBody()
-                </div>
+                    
+                        @RenderBody()
+                    
             </section>
         </div>
         <footer>

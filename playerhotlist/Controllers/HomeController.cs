@@ -14,5 +14,35 @@ namespace playerhotlist.Controllers
         {
             return View(repository.GetAllItems());
         }
+
+        public ActionResult Arma()
+        {
+            return View(repository.GetAllItems(1));
+        }
+
+        public ActionResult Aircav()
+        {
+            return View(repository.GetAllItems(2));
+        }
+
+        public ActionResult Counter()
+        {
+            return View(repository.GetAllItems(3));
+        }
+
+        public ActionResult Squad()
+        {
+            return View(repository.GetAllItems(4));
+        }
+
+        public ActionResult ActiveList(int i)
+        {
+            return View(repository.GetAllItems(i));
+        }
+        
+        public ActionResult NewHotlistItem()
+        {
+            return View();
+        }
     }
 }

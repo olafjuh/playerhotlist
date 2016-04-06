@@ -12,11 +12,20 @@ a{
     
 }
 
+h2{
+    color:#ffd800;
+    margin-bottom:4%;
+}
+
 /*Index/hotlist*/
 .nav-bar{
     height:150px;
     margin-top:50px;
     color:#ffd800;
+}
+
+.nav-bar a{
+    text-decoration-line:none;
 }
 
 .nav-bar ul{
@@ -28,7 +37,7 @@ a{
     display:inline;
     width:20%;
     height:5%;
-    margin-left:17%;
+    margin-left:10%;
     margin-bottom:5%;
     padding:2% 2% 2% 2%;
 }
@@ -73,8 +82,128 @@ table td:first-child{
     text-align:left;
 }
 
+
+/*Forms -CP from whatsupp*/
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+    fieldset legend {
+        display: none;
+    }
+
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+        }
+
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    color:#ffd800;
+}
+
+label.checkbox {
+    display: inline;
+}
+
+input, textarea {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #000000;
+    font-size: 1.2em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 300px;
+}
+
+textarea {
+    font-family: inherit;
+    width: 500px;
+}
+
+    input:focus, textarea:focus {
+        border: 1px solid #7ac0da;
+    }
+
+    input[type="checkbox"] {
+        background: transparent;
+        border: inherit;
+        width: auto;
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    button {
+        border: 1px groove #808080;
+    background-color:#1b1b1b;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 7px;
+        margin-right: 8px;
+        width: auto;
+        display:block;
+        margin-left:66%;
+        margin-bottom:2%;
+        color:#ffd800;
+    }
+
+    td input[type="submit"],
+    td input[type="button"],
+    td button {
+        font-size: 1em;
+        padding: 4px;
+        margin-right: 4px;
+    }
+
+.form-wrapper{
+    margin-left:50px;
+    margin-top:30px;
+}
+
+/*Message Errors*/
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+    margin-left:20px;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
 /*Footer*/
 
 footer{
     text-align:center;
 }
+
+.hotlist-content-table tr:hover td{
+    background-color: #ffd800;
+    cursor: pointer;
+}
+
