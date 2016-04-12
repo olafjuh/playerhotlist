@@ -21,15 +21,18 @@ namespace playerhotlist.Models
         [DataType(DataType.Password)]
         public string password { get; set; }
 
+        public int roleID { get; set; } 
+
         public Account()
         {
 
         }
 
-        public Account(string password, string name)
+        public Account(string password, string name, int roleID)
         {
             this.password = password;
             this.name = name;
+            this.roleID = roleID;
         }
     }
 

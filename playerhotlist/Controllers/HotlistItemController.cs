@@ -20,7 +20,15 @@ namespace playerhotlist.Controllers
 
         public ActionResult NewHotlistItem()
         {
-            return View();
+            NewHotlistItemViewModel vm = new NewHotlistItemViewModel();
+            IEnumerable<GameTypes> actionTypes = Enum.GetValues(typeof(GameTypes)).Cast<GameTypes>();
+            vm.GameList = from action in actionTypes
+                             select new SelectListItem
+                             {
+                                 Text = action.ToString(),
+                                 Value = action.ToString()
+                             };
+            return View(vm);
         }
 
         [HttpPost]

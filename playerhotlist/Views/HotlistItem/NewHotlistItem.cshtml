@@ -1,11 +1,11 @@
-﻿@model playerhotlist.Models.HotlistItem
+﻿@model playerhotlist.Models.NewHotlistItemViewModel
 
 <div class="form-wrapper">
     @using (Html.BeginForm())
     {
-        @Html.LabelFor(m => m.game)
-        @Html.TextBoxFor(m => m.game)
-        @Html.ValidationMessageFor(m => m.game)
+        @Html.LabelFor(m => m.GameList)
+        @Html.DropDownListFor(model => model.game, Model.GameList)
+        <br />
         <br />
         @Html.LabelFor(m => m.playerName)
         @Html.TextBoxFor(m => m.playerName)
@@ -42,3 +42,5 @@
         <input type="submit" value="Add new item" />
     }
     </div>
+
+
