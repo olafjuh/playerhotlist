@@ -27,16 +27,13 @@ namespace playerhotlist.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Account model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && Membership.ValidateUser(model.name, model.password))
             {
                 Account account = repository.GetAccount(model.name, model.password);
                 if (account != null)
                 {
                     //niet persistent (false) werkt alleen in firefox, chrome bewaard deze wel.
                     FormsAuthentication.SetAuthCookie(account.name, false);
-
-                    //remember complete account
-                    
 
                     //redirect to default entry of Contact Controller
                     return RedirectToAction("Index", "Home");

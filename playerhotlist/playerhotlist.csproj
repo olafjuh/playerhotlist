@@ -197,7 +197,6 @@
     <Compile Include="Models\GameTypes.cs" />
     <Compile Include="Models\HotlistItemModel.cs" />
     <Compile Include="Models\NewHotlistItemViewModel.cs" />
-    <Compile Include="Controllers\SecurityInfrastructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
