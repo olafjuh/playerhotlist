@@ -16,5 +16,6 @@ namespace playerhotlist.Controllers
 
         public DbSet<playerhotlist.Models.HotlistItem> HotlistItems { get; set; }
         public DbSet<playerhotlist.Models.Account> Accounts { get; set; }
+        public DbSet<playerhotlist.Models.Role> Roles { get; set; }
     }
 }

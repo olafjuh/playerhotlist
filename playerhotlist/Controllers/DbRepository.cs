@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using playerhotlist.Models;
 
+
 namespace playerhotlist.Controllers
 {
     public class DbRepository
@@ -18,13 +19,13 @@ namespace playerhotlist.Controllers
         public IEnumerable<HotlistItem> GetAllItems(int i)
         {
             if (i == 1)
-                return ctx.HotlistItems.Where(c => c.game == "ARMA 3").ToList();
+                return ctx.HotlistItems.Where(c => c.game == "arma").ToList();
             if (i == 2)
-                return ctx.HotlistItems.Where(c => c.game == "ACV").ToList();
+                return ctx.HotlistItems.Where(c => c.game == "acv").ToList();
             if (i == 3)
-                return ctx.HotlistItems.Where(c => c.game == "CSGO").ToList();
+                return ctx.HotlistItems.Where(c => c.game == "csgo").ToList();
             if (i == 4)
-                return ctx.HotlistItems.Where(c => c.game == "SQUAD").ToList();
+                return ctx.HotlistItems.Where(c => c.game == "squad").ToList();
 
             return ctx.HotlistItems;
         }
@@ -71,15 +72,17 @@ namespace playerhotlist.Controllers
             Account account = new Account();
             account.name = model.name;
             account.password = model.password;
-            account.roleID = 1;
+            account.roleID = 10;
             ctx.Accounts.Add(account);
             ctx.SaveChanges();
         }
 
-        public bool ValidateUser(string username, string password)
+        public bool IsValidatedUser(string username, string password)
         {
-            return (ctx.Accounts.SingleOrDefault(c => c.name == username && c.password == password) != null);
-        }
+            IEnumerable<Account> list = ctx.Accounts;
+            bool a = ((ctx.Accounts.SingleOrDefault(c => c.name == username && c.password == password)) != null);
 
+            return a;
+        }
     }
 }

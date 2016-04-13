@@ -50,11 +50,13 @@ namespace playerhotlist.Controllers
             return View(repository.GetHotlistItem(id));
         }
 
+        [Authorize(Roles = "Admin, Moderator")]
         public ActionResult EditHotlistItem(int id3)
         {
             return View(repository.GetHotlistItem(id3));
         }
 
+        [Authorize(Roles = "Admin, Moderator")]
         [HttpPost]
         public ActionResult EditHotlistItem(HotlistItem hotlistItem)
         {

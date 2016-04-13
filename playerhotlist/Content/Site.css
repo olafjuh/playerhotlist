@@ -82,8 +82,8 @@ table td:first-child{
     text-align:left;
 }
 
-.hotlist-content-table tr:nth-child(even){
-    background-color: #000000;
+.hotlist-content-table tr:nth-child(even) td{
+    background-color: #b6b1b1;
 }
 
 

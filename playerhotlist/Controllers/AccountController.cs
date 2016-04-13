@@ -23,11 +23,9 @@ namespace playerhotlist.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public ActionResult Login(Account model)
         {
-            if (ModelState.IsValid && Membership.ValidateUser(model.name, model.password))
+            if (ModelState.IsValid && repository.IsValidatedUser(model.name, model.password))
             {
                 Account account = repository.GetAccount(model.name, model.password);
                 if (account != null)

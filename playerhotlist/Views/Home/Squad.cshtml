@@ -1,0 +1,38 @@
+﻿@model IEnumerable<playerhotlist.Models.HotlistItem>
+
+<table class="hotlist-content-table">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>B3 ID</th>
+            <th>TS3 ID</th>
+            <th>Name</th>
+            <th>Reason</th>
+            <th>Aliases</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    @foreach (var m in Model)
+    {
+        //link for editing/viewing item.
+        <tr onclick="location.href = '@(Url.Action("Examine", "HotlistItem", new { id = m.id }))'">
+            <td>@m.game</td>
+            <td>@m.b3ID</td>
+            <td>@m.teamspeakID</td>
+            <td>@m.playerName</td>
+            <td>@m.reason</td>
+            <td>@m.aliases</td>
+            <td>
+                @if (m.status == false)
+                {
+
+                }
+                else
+                {
+                    <text>Banned</text>
+                }
+            </td>
+        </tr>
+    }
+</table>
+

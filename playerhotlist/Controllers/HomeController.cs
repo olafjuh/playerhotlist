@@ -10,12 +10,12 @@ namespace playerhotlist.Controllers
     {
         DbRepository repository = new DbRepository();
 
-        
+        [Authorize(Roles = "user")]
         public ActionResult Index()
         {
             return View(repository.GetAllItems());
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Arma()
         {
             return View(repository.GetAllItems(1));
