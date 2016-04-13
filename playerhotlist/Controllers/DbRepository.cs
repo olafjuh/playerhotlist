@@ -71,8 +71,14 @@ namespace playerhotlist.Controllers
             Account account = new Account();
             account.name = model.name;
             account.password = model.password;
+            account.roleID = 1;
             ctx.Accounts.Add(account);
             ctx.SaveChanges();
+        }
+
+        public bool ValidateUser(string username, string password)
+        {
+            return (ctx.Accounts.SingleOrDefault(c => c.name == username && c.password == password) != null);
         }
 
     }

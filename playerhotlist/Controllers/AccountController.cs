@@ -23,6 +23,8 @@ namespace playerhotlist.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Account model)
         {
             if (ModelState.IsValid)
@@ -34,7 +36,7 @@ namespace playerhotlist.Controllers
                     FormsAuthentication.SetAuthCookie(account.name, false);
 
                     //remember complete account
-                    Session["loggedin_account"] = account;
+                    
 
                     //redirect to default entry of Contact Controller
                     return RedirectToAction("Index", "Home");
@@ -73,7 +75,6 @@ namespace playerhotlist.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 repository.RegisterAccount(model);
                 return RedirectToAction("Index", "Home");
             }

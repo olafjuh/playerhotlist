@@ -22,7 +22,7 @@ namespace playerhotlist.Models
         public string password { get; set; }
 
         public int roleID { get; set; } 
-
+        
         public Account()
         {
 

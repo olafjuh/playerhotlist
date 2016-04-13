@@ -10,6 +10,7 @@ namespace playerhotlist.Controllers
     {
         DbRepository repository = new DbRepository();
 
+        
         public ActionResult Index()
         {
             return View(repository.GetAllItems());

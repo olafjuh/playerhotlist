@@ -197,12 +197,13 @@
     <Compile Include="Models\GameTypes.cs" />
     <Compile Include="Models\HotlistItemModel.cs" />
     <Compile Include="Models\NewHotlistItemViewModel.cs" />
+    <Compile Include="Controllers\SecurityInfrastructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\hotlistdatabase.mdf" />
-    <Content Include="App_Data\hotlistdatabase_log.ldf">
-      <DependentUpon>hotlistdatabase.mdf</DependentUpon>
+    <Content Include="App_Data\db2.mdf" />
+    <Content Include="App_Data\db2_log.ldf">
+      <DependentUpon>db2.mdf</DependentUpon>
     </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

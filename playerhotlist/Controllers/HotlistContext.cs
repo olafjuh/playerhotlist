@@ -9,7 +9,7 @@ namespace playerhotlist.Controllers
     public class HotlistContext : DbContext
     {
         public HotlistContext()
-            : base("HotlistConnection")
+            : base("DefaultConnection")
         {
             Database.SetInitializer<HotlistContext>(null);
         }
