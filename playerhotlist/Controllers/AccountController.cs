@@ -104,7 +104,8 @@ namespace playerhotlist.Controllers
 
         public ActionResult Manage()
         {
-            return View();
+            Account account = repository.GetAccount(User.Identity.Name);
+            return View(account);
         }
     }
 }

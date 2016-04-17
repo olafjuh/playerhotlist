@@ -73,6 +73,11 @@ namespace playerhotlist.Controllers
             return ctx.Accounts.SingleOrDefault(c => c.Id == id);
         }
 
+        public Account GetAccount(string name)
+        {
+            return ctx.Accounts.SingleOrDefault(c => c.name == name);
+        }
+
         public void RegisterAccount(RegisterModel model)
         {
             Account account = new Account();
