@@ -36,6 +36,7 @@ namespace playerhotlist.Controllers
         {
             if (ModelState.IsValid)
             {
+                hotlistItem.dateCreated = DateTime.Now;
                 repository.SaveItem(hotlistItem);
                 return RedirectToAction("Index", "Home", "Home");
             }

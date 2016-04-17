@@ -41,6 +41,9 @@
         @Html.TextAreaFor(m => m.creator)
         @Html.ValidationMessageFor(m => m.creator)
         <br />
+        @Html.LabelFor(c => c.status)
+        @Html.EditorFor(c => c.status)
+        <br />
         <input type="submit" value="Save Changes" />
     }
     </div>

@@ -48,6 +48,7 @@ namespace playerhotlist.Controllers
             b.teamspeakID = a.teamspeakID;
             b.situation = a.situation;
             b.reason = a.reason;
+            b.status = a.status;
             ctx.SaveChanges();
             
         }
@@ -67,6 +68,11 @@ namespace playerhotlist.Controllers
             return account;
         }
 
+        public Account GetAccount(int id)
+        {
+            return ctx.Accounts.SingleOrDefault(c => c.Id == id);
+        }
+
         public void RegisterAccount(RegisterModel model)
         {
             Account account = new Account();
@@ -83,6 +89,17 @@ namespace playerhotlist.Controllers
             bool a = ((ctx.Accounts.SingleOrDefault(c => c.name == username && c.password == password)) != null);
 
             return a;
+        }
+
+        public IEnumerable<Account> GetAllAccounts()
+        {
+            return ctx.Accounts.ToList();
+        }
+
+        public void UpdateAccount(Account accountB)
+        {
+            Account accountA = ctx.Accounts.SingleOrDefault(c => c.Id == accountB.Id);
+
         }
     }
 }

@@ -20,7 +20,7 @@ h2{
 /*Index/hotlist*/
 .nav-bar{
     height:150px;
-    margin-top:50px;
+    margin-top:40px;
     color:#ffd800;
 }
 
@@ -44,8 +44,11 @@ h2{
 
 .content-box{
     min-height:600px;
+    max-height:600px;
     height:auto;
     margin-top:10px;
+    overflow: auto;
+    overflow-y: scroll;
 }
 .general-layout{
     border: 1px groove #808080;

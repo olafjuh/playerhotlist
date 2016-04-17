@@ -43,12 +43,14 @@ namespace playerhotlist.Models
         [StringLength(50)]
         public string creator { get; set; }
 
+        public DateTime dateCreated { get; set; }
+
         public HotlistItem()
         {
 
         }
 
-        public HotlistItem(string playerName, string aliases, string b3ID, string ts3ID, string reason, string situation, string chatlog, bool status, string game, string creator)
+        public HotlistItem(string playerName, string aliases, string b3ID, string ts3ID, string reason, string situation, string chatlog, bool status, string game, string creator, DateTime dateCreated)
         {
             this.playerName = playerName;
             this.aliases = aliases;
@@ -59,6 +61,7 @@ namespace playerhotlist.Models
             this.status = status;
             this.game = game;
             this.creator = creator;
+            this.dateCreated = dateCreated;
         }
     }
 }

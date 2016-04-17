@@ -39,6 +39,9 @@
         @Html.TextAreaFor(m => m.creator)
         @Html.ValidationMessageFor(m => m.creator)
         <br />
+        @Html.LabelFor(m => m.status)
+        @Html.EditorFor(m => m.status)
+        <br />
         <input type="submit" value="Add new item" />
     }
     </div>

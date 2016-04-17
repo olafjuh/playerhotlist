@@ -76,6 +76,35 @@ namespace playerhotlist.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult AdminPage(string sortOrder)
+        {
+            switch (sortOrder)
+            {
+                case "name":
+                    return View(repository.GetAllAccounts().OrderBy(c => c.name).ToList());
+                case "roleId":
+                    return View(repository.GetAllAccounts().OrderBy(c => c.roleID).ToList());                
+                default:
+                    return View(repository.GetAllAccounts().OrderBy(c => c.name).ToList());
+            }
+        }
 
+        public ActionResult EditAccount(int id)
+        {
+            return View(repository.GetAccount(id));
+        }
+
+        [HttpPost]
+        public ActionResult EditAccount(Account account)
+        {
+            repository.UpdateAccount(account);
+            return View(repository.GetAccount(account.Id));
+        }
+
+        public ActionResult Manage()
+        {
+            return View();
+        }
     }
 }

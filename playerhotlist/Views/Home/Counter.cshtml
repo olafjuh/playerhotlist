@@ -3,13 +3,14 @@
 <table class="hotlist-content-table">
     <thead>
         <tr>
-            <th>Game</th>
-            <th>B3 ID</th>
-            <th>TS3 ID</th>
-            <th>Name</th>
+            <th>@Html.ActionLink("Game", "Counter", new { sortOrder = "game" })</th>
+            <th>@Html.ActionLink("Date", "Counter", new { sortOrder = "date" })</th>
+            <th>@Html.ActionLink("B3 ID", "Counter", new { sortOrder = "b3Id" })</th>
+            <th>@Html.ActionLink("TS3 ID", "Counter", new { sortOrder = "ts3Id" })</th>
+            <th>@Html.ActionLink("Name", "Counter", new { sortOrder = "name" })</th>
             <th>Reason</th>
             <th>Aliases</th>
-            <th>Status</th>
+            <th>@Html.ActionLink("Status", "Counter", new { sortOrder = "status" })</th>
         </tr>
     </thead>
     @foreach (var m in Model)
@@ -17,6 +18,7 @@
         //link for editing/viewing item.
         <tr onclick="location.href = '@(Url.Action("Examine", "HotlistItem", new { id = m.id }))'">
             <td>@m.game</td>
+            <td>@m.dateCreated</td>
             <td>@m.b3ID</td>
             <td>@m.teamspeakID</td>
             <td>@m.playerName</td>

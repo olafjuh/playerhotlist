@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage</h2>
+
+<div class="form-wrapper">
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.name)
+        @Html.TextBoxFor(m => m.name)
+        @Html.ValidationMessageFor(m => m.name)
+        <br />
+        @Html.LabelFor(m => m.password)
+        @Html.TextBoxFor(m => m.password)
+        @Html.ValidationMessageFor(m => m.password)
+        <br />
+        @Html.LabelFor(m => m.roleID)
+        @Html.TextBoxFor(m => m.roleID)
+        <br />
+    }
+</div>

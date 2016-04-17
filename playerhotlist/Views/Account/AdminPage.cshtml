@@ -1,0 +1,26 @@
+﻿@model IEnumerable<playerhotlist.Models.Account>
+@{
+    ViewBag.Title = "AdminPage";
+}
+
+<h2>AdminPage</h2>
+
+<table class="hotlist-content-table">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("Username", "AdminPage", new { sortOrder = "name" })</th>
+            <th>Password</th>
+            <th>@Html.ActionLink("Role ID", "AdminPage", new { sortOrder = "roleId" })</th>
+        </tr>
+    </thead>
+    @foreach (var m in Model)
+    {
+        //link for editing/viewing item.
+        <tr onclick="location.href = '@(Url.Action("EditAccount", "Account", new { id = m.Id }))'">
+            <td>@m.name</td>
+            <td>@m.password</td>
+            <td>@m.roleID</td>
+    </tr>
+    }
+</table>
+

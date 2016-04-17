@@ -10,36 +10,117 @@ namespace playerhotlist.Controllers
     {
         DbRepository repository = new DbRepository();
 
-        [Authorize(Roles = "user")]
-        public ActionResult Index()
+        //[Authorize(Roles = "user")]
+        public ActionResult Index(string sortOrder)
         {
-            return View(repository.GetAllItems());
+            switch(sortOrder)
+            {
+                case "game":
+                    return View(repository.GetAllItems().OrderBy(c => c.game));
+                case "name":
+                    return View(repository.GetAllItems().OrderBy(c => c.playerName));
+                case "b3Id":
+                    return View(repository.GetAllItems().OrderBy(c => c.b3ID));
+                case "ts3Id":
+                    return View(repository.GetAllItems().OrderBy(c => c.teamspeakID));
+                case "status":
+                    return View(repository.GetAllItems().OrderBy(c => c.status));
+                case "date":
+                    return View(repository.GetAllItems().OrderByDescending(c => c.dateCreated));
+                default:
+                    return View(repository.GetAllItems().OrderByDescending(c => c.dateCreated));
+            }
+            
         }
-        [Authorize(Roles = "admin")]
-        public ActionResult Arma()
+        //[Authorize(Roles = "admin")]
+        public ActionResult Arma(string sortOrder)
         {
-            return View(repository.GetAllItems(1));
+            switch (sortOrder)
+            {
+                case "game":
+                    return View(repository.GetAllItems(1).OrderBy(c => c.game));
+                case "name":
+                    return View(repository.GetAllItems(1).OrderBy(c => c.playerName));
+                case "b3Id":
+                    return View(repository.GetAllItems(1).OrderBy(c => c.b3ID));
+                case "ts3Id":
+                    return View(repository.GetAllItems(1).OrderBy(c => c.teamspeakID));
+                case "status":
+                    return View(repository.GetAllItems(1).OrderBy(c => c.status));
+                case "date":
+                    return View(repository.GetAllItems(1).OrderByDescending(c => c.dateCreated));
+                default:
+                    return View(repository.GetAllItems(1).OrderBy(c => c.game));
+            }
         }
 
-        public ActionResult Aircav()
+        public ActionResult Aircav(string sortOrder)
         {
-            return View(repository.GetAllItems(2));
+            switch (sortOrder)
+            {
+                case "game":
+                    return View(repository.GetAllItems(2).OrderBy(c => c.game));
+                case "name":
+                    return View(repository.GetAllItems(2).OrderBy(c => c.playerName));
+                case "b3Id":
+                    return View(repository.GetAllItems(2).OrderBy(c => c.b3ID));
+                case "ts3Id":
+                    return View(repository.GetAllItems(2).OrderBy(c => c.teamspeakID));
+                case "status":
+                    return View(repository.GetAllItems(2).OrderBy(c => c.status));
+                case "date":
+                    return View(repository.GetAllItems(2).OrderByDescending(c => c.dateCreated));
+                default:
+                    return View(repository.GetAllItems(2).OrderBy(c => c.game));
+            }
         }
 
-        public ActionResult Counter()
+        public ActionResult Counter(string sortOrder)
         {
-            return View(repository.GetAllItems(3));
+            switch (sortOrder)
+            {
+                case "game":
+                    return View(repository.GetAllItems(3).OrderBy(c => c.game));
+                case "name":
+                    return View(repository.GetAllItems(3).OrderBy(c => c.playerName));
+                case "b3Id":
+                    return View(repository.GetAllItems(3).OrderBy(c => c.b3ID));
+                case "ts3Id":
+                    return View(repository.GetAllItems(3).OrderBy(c => c.teamspeakID));
+                case "status":
+                    return View(repository.GetAllItems(3).OrderBy(c => c.status));
+                case "date":
+                    return View(repository.GetAllItems(3).OrderByDescending(c => c.dateCreated));
+                default:
+                    return View(repository.GetAllItems(3).OrderBy(c => c.game));
+            }
         }
 
-        public ActionResult Squad()
+        public ActionResult Squad(string sortOrder)
         {
-            return View(repository.GetAllItems(4));
+            switch (sortOrder)
+            {
+                case "game":
+                    return View(repository.GetAllItems(4).OrderBy(c => c.game));
+                case "name":
+                    return View(repository.GetAllItems(4).OrderBy(c => c.playerName));
+                case "b3Id":
+                    return View(repository.GetAllItems(4).OrderBy(c => c.b3ID));
+                case "ts3Id":
+                    return View(repository.GetAllItems(4).OrderBy(c => c.teamspeakID));
+                case "status":
+                    return View(repository.GetAllItems(4).OrderBy(c => c.status));
+                case "date":
+                    return View(repository.GetAllItems(4).OrderByDescending(c => c.dateCreated));
+                default:
+                    return View(repository.GetAllItems(4).OrderBy(c => c.game));
+            }
         }
 
-        public ActionResult ActiveList(int i)
-        {
-            return View(repository.GetAllItems(i));
-        }
+        //public ActionResult ActiveList(int i)
+        //{
+        //    return View(repository.GetAllItems(i));
+        //}
         
         public ActionResult NewHotlistItem()
         {
