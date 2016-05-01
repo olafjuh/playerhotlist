@@ -116,13 +116,14 @@ button {
     margin-top: 5%;
     width:500px;
     height:auto;
-    background-color:#535353;
+    background-color:#171717;
     border-radius:15px;
+    border: 2px groove #808080;
     color: black;
 }
 
 .login-container h2{
-    color: #e8e8e8;
+    color: #ffd800;
     text-shadow: 1px 1px 1px #000000;
 }
 
@@ -141,7 +142,7 @@ button {
     height:auto;
     text-align:center;
     padding: 10px;
-    background-color:#808080;
+    background-color:#1b1b1b;
     border-top-left-radius: 15px;
 }
 .form-tab-two{
@@ -153,7 +154,7 @@ button {
 
 
 .form-wrapper{
-    background-color:#808080;
+    background-color:#1b1b1b;
     display:inline-block;
     padding:15px;
     padding-top:50px;
@@ -163,7 +164,7 @@ button {
 }
 
 .form-wrapper p{
-    color: #1b1b1b;
+    color: #000000;
 }
 
 /*Forms -CP from whatsupp*/
