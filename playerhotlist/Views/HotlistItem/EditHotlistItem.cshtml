@@ -3,6 +3,8 @@
 <div class="form-wrapper">
     @using (Html.BeginForm())
     {
+        @Html.AntiForgeryToken()
+        
         @Html.HiddenFor(c => c.id);
 
         @Html.LabelFor(m => m.game)

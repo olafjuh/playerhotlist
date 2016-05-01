@@ -7,6 +7,7 @@ using playerhotlist.Models;
 
 namespace playerhotlist.Controllers
 {
+    [Authorize]
     public class HotlistItemController : Controller
     {
         //
@@ -32,6 +33,7 @@ namespace playerhotlist.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult NewHotlistItem(HotlistItem hotlistItem)
         {
             if (ModelState.IsValid)
@@ -57,8 +59,10 @@ namespace playerhotlist.Controllers
             return View(repository.GetHotlistItem(id3));
         }
 
-        [Authorize(Roles = "Admin, Moderator")]
+        
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Moderator")]
         public ActionResult EditHotlistItem(HotlistItem hotlistItem)
         {
             repository.EditItem(hotlistItem);

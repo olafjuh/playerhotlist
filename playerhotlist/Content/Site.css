@@ -48,7 +48,7 @@ h2{
     height:auto;
     margin-top:10px;
     overflow: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .general-layout{
     border: 1px groove #808080;
@@ -89,25 +89,103 @@ table td:first-child{
     background-color: #b6b1b1;
 }
 
+/*Custom Forms*/
+/*container*/
+/*container for forms*/
+
+
+.form-wrapper input, .form-wrapper textarea, .form-wrapper label{
+    display:block;
+    width:65%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+    margin-top:10%;
+    
+}
+
+.login-container{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 5%;
+    width:500px;
+    height:auto;
+    background-color:#535353;
+    border-radius:15px;
+    color: black;
+}
+
+.login-container h2{
+    color: #e8e8e8;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.login-container .form-tab-two{
+    opacity: 0.5;    
+}
+
+.form-tab-container{    
+    background-color:red;
+    display:block;
+}
+
+.form-tab-one{
+    float:left;
+    width:150px;
+    height:auto;
+    text-align:center;
+    padding: 10px;
+    background-color:#808080;
+    border-top-left-radius: 15px;
+}
+.form-tab-two{
+    float:left;
+    margin-left:100px;
+    text-align:center;
+    padding:10px;
+}
+
+
+.form-wrapper{
+    background-color:#808080;
+    display:inline-block;
+    padding:15px;
+    padding-top:50px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width:470px;
+}
+
+.form-wrapper p{
+    color: #1b1b1b;
+}
 
 /*Forms -CP from whatsupp*/
-fieldset {
+/*fieldset {
     border: none;
     padding: 0;
 }
 
-    fieldset legend {
-        display: none;
-    }
+fieldset legend 
+{
+    display: none;
+}
 
-    fieldset ol {
-        padding: 0;
-        list-style: none;
-    }
+fieldset ol 
+{
+    padding: 0;
+    list-style: none;
+}
 
-        fieldset ol li {
-            padding-bottom: 5px;
-        }
+    fieldset ol li {
+        padding-bottom: 5px;
+    }
 
 label {
     display: block;
@@ -173,11 +251,11 @@ textarea {
 .form-wrapper{
     margin-left:50px;
     margin-top:30px;
-}
+}*/
 
 /*Message Errors*/
 .field-validation-error {
-    color: #e80c4d;
+    color: red;
     font-weight: bold;
     margin-left:20px;
 }
@@ -195,7 +273,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .validation-summary-errors {
-    color: #e80c4d;
+    color: red;
     font-weight: bold;
     font-size: 1.1em;
 }

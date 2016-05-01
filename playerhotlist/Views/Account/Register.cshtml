@@ -1,21 +1,41 @@
 ﻿@model playerhotlist.Models.RegisterModel
 
-<h2>Enter your desired username and password</h2>
-<div class="form-wrapper">
-    @using (Html.BeginForm())
-    {
-        @Html.LabelFor(m => m.name)
-        @Html.TextBoxFor(m => m.name)
-        @Html.ValidationMessageFor(m => m.name)
+<div class="login-container">
+    <div class="form-tab-container">
+        <div class="form-tab-one">
+            <h2>Register</h2>
+        </div>
+        <a href="@Url.Action("Login", "Account")">
+            <div class="form-tab-two">
+                <h2>Login</h2>
+            </div>
+        </a>
+    </div>
+
+    <div class="form-wrapper">
+
+        @using (@Html.BeginForm())
+        {
+
+            @Html.TextBoxFor(m => m.name, new { @placeholder = "Username" })
+
+            <br />
+
+            @Html.PasswordFor(m => m.password, new { @placeholder = "Password" })
+
+            <br />
+
+            @Html.PasswordFor(m => m.confirmPassword, new { @placeholder = "Confirm Password" })
+            
+            <br />
+            
+            <input type="submit" value="Register" />
+
+            @Html.ValidationSummary()
+        }
         <br />
-        @Html.LabelFor(m => m.password)
-        @Html.PasswordFor(m => m.password)
-        @Html.ValidationMessageFor(m => m.password)
         <br />
-        @Html.LabelFor(m => m.confirmPassword)
-        @Html.PasswordFor(m => m.confirmPassword)
-        @Html.ValidationMessageFor(m => m.confirmPassword)
         <br />
-        <input type="submit" value="Submit" />
-    }
+        
+    </div>
 </div>

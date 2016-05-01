@@ -3,6 +3,8 @@
 <div class="form-wrapper">
     @using (Html.BeginForm())
     {
+        @Html.AntiForgeryToken()
+        
         @Html.LabelFor(m => m.GameList)
         @Html.DropDownListFor(model => model.game, Model.GameList)
         <br />

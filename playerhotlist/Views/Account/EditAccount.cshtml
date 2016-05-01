@@ -8,6 +8,8 @@
 <div class="form-wrapper">
     @using (Html.BeginForm())
     {
+        @Html.AntiForgeryToken()
+        
         @Html.LabelFor(m => m.name)
         @Html.TextBoxFor(m => m.name)
         @Html.ValidationMessageFor(m => m.name)

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace playerhotlist.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         DbRepository repository = new DbRepository();

@@ -44,6 +44,8 @@ namespace playerhotlist.Controllers
                 }
             }
             //error --> go back to login page
+            ModelState.AddModelError("login-error", "The user name or password provided is/are incorrect.");
+
             return View(model);
         }
 
@@ -59,7 +61,7 @@ namespace playerhotlist.Controllers
             //session = 0;
             return RedirectToAction("Login", "Account");
         }
-
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -70,8 +72,16 @@ namespace playerhotlist.Controllers
         {
             if (ModelState.IsValid)
             {
-                repository.RegisterAccount(model);
-                return RedirectToAction("Index", "Home");
+                if (repository.checkAccount(model))
+                {
+                    repository.RegisterAccount(model);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("name", "User name is already taken");
+                    return View(model);
+                }
             }
             return View(model);
         }
@@ -89,13 +99,14 @@ namespace playerhotlist.Controllers
                     return View(repository.GetAllAccounts().OrderBy(c => c.name).ToList());
             }
         }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult EditAccount(int id)
         {
             return View(repository.GetAccount(id));
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult EditAccount(Account account)
         {
             repository.UpdateAccount(account);

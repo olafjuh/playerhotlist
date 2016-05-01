@@ -104,7 +104,22 @@ namespace playerhotlist.Controllers
         public void UpdateAccount(Account accountB)
         {
             Account accountA = ctx.Accounts.SingleOrDefault(c => c.Id == accountB.Id);
+            accountA.name = accountB.name;
+            accountA.password = accountB.password;
+            accountA.roleID = accountB.roleID;
+            ctx.SaveChanges();
+        }
 
+        public bool checkAccount(RegisterModel account)
+        {
+            if((ctx.Accounts.SingleOrDefault(c => c.name == account.name)) == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
