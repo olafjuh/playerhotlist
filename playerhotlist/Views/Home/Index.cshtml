@@ -19,20 +19,21 @@
         //link for editing/viewing item.
         <tr onclick="location.href = '@(Url.Action("Examine", "HotlistItem", new { id = m.id }))'">
                 <td>@m.game</td>
-                <td>@m.dateCreated</td>
+                <td>@m.dateCreated.ToString("dd-MMM-yy")</td>
                 <td>@m.b3ID</td>
                 <td>@m.teamspeakID</td>
                 <td>@m.playerName</td>
                 <td>@m.reason</td>
                 <td>@m.aliases</td>
-                <td>@if (m.status == false)
-                    {
+                <td>
+                    @if (m.status == false)
+                {
 
-                    }
-                    else
-                    {
-                        <text>Banned</text>
-                    }
+                }
+                else
+                {
+                    <text>Banned</text>
+                }
                 </td>
                 
             </tr>

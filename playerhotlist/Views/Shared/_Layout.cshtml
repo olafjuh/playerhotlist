@@ -15,6 +15,17 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                    <section class="top-bar general-layout">
+                        @Html.ActionLink("Home", "Index", "Home", new {id = "home-tag"})
+                        <a href="http://www.7cav.us">7th Cavalry</a>
+                        <a href="https://github.com/redcrayonn/playerhotlist">Github</a>
+                           @using (@Html.BeginForm("SearchResult", "Search"))
+                           {
+                            <input type="image" src="~/Images/searchicon.png" alt="Search" id="search-submit" />
+                               @Html.TextBox("searchString", null, new { id = "search-box", @placeholder = "Search name, B3 etc."})
+                                
+                           }
+                    </section>
                     <nav>
                         <div class="nav-bar general-layout">
                             <ul>

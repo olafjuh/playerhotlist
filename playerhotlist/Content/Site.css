@@ -18,9 +18,36 @@ h2{
 }
 
 /*Index/hotlist*/
+
+#home-tag, .top-bar a{
+    text-decoration:none;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    float: left;
+}
+#search-box{
+    float:right;
+    margin-top: 7px;
+    margin-right:5px;
+    height: 20px;
+}
+
+#search-submit{
+    float:right;
+    margin-top: 10px;
+    margin-right:5px;
+    width:20px;
+    height:20px;
+}
+
+.top-bar{
+    height:40px;
+}
+
 .nav-bar{
-    height:150px;
-    margin-top:40px;
+    height:110px;
+    margin-top:20px;
     color:#ffd800;
 }
 
@@ -30,7 +57,7 @@ h2{
 
 .nav-bar ul{
     list-style-type:none;
-    margin-top:5%;
+    margin-top:4%;
 }
 
 .nav-bar ul li{
@@ -75,15 +102,20 @@ background: #808080; /* Light grey background */
 font-weight: bold; /* Make sure they're bold */
 }
 
+th a{
+    text-decoration: none;
+    color: black;
+}
+
 td {
 background: #FAFAFA; /* Lighter grey background */
 text-align: center; /* Center our text */
 padding: 5px 5px 5px 5px;
 }
 
-table td:first-child{
+/*table td:first-child{
     text-align:left;
-}
+}*/
 
 .hotlist-content-table tr:nth-child(even) td{
     background-color: #b6b1b1;
@@ -103,9 +135,9 @@ table td:first-child{
     text-align:center;
 }
 
-input[type="submit"],
-input[type="button"],
-button {
+.form-wrapper input[type="submit"],
+.form-wrapper input[type="button"],
+.form-wrapper button {
     margin-top:10%;
     
 }
@@ -116,10 +148,9 @@ button {
     margin-top: 5%;
     width:500px;
     height:auto;
-    background-color:#171717;
-    border-radius:15px;
+    background-color:#1b1b1b;
+    border-radius:2px;
     border: 2px groove #808080;
-    color: black;
 }
 
 .login-container h2{
@@ -128,7 +159,7 @@ button {
 }
 
 .login-container .form-tab-two{
-    opacity: 0.5;    
+    opacity: 0.8;    
 }
 
 .form-tab-container{    
@@ -142,8 +173,7 @@ button {
     height:auto;
     text-align:center;
     padding: 10px;
-    background-color:#1b1b1b;
-    border-top-left-radius: 15px;
+    background-color:#2b2b2b;
 }
 .form-tab-two{
     float:left;
@@ -154,12 +184,10 @@ button {
 
 
 .form-wrapper{
-    background-color:#1b1b1b;
+    background-color:#2b2b2b;
     display:inline-block;
     padding:15px;
     padding-top:50px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     width:470px;
 }
 

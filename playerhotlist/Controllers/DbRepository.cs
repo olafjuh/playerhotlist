@@ -121,5 +121,10 @@ namespace playerhotlist.Controllers
                 return false;
             }
         }
+
+        //public IEnumerable<HotlistItem> ProcessQuery(string searchString)
+        //{
+        //    return new IEnumerable<HotlistItem> GetAllItems;
+        //}
     }
 }
